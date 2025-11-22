@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="ms">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Claim Kupon TikTok RM5</title>
+
+<style>
+body {
+    font-family: Arial, sans-serif;
+    padding: 20px;
+    text-align: center;
+    background: #fef3e3;
+}
+
+h2 {
+    color: #ff4500;
+}
+
+#btn {
+    position: fixed;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: #ff4500;
+    color: white;
+    padding: 15px;
+    font-size: 20px;
+    font-weight: bold;
+    border: none;
+    cursor: pointer;
+    width: 90%;
+    max-width: 400px;
+    margin: 0 auto;
+    border-radius: 10px;
+}
+
+#btn:disabled {
+    background: #ccc;
+    cursor: not-allowed;
+}
+</style>
+
+</head>
+<body>
+
+<h2>Tunggu sekejap… Kupon TikTok RM5 sedang dibuka</h2>
+<p>Auto redirect dalam <span id="countdown">5</span> saat…</p>
+
+<button id="btn" disabled>Claim Kupon RM5 Sekarang</button>
+
+<script>
+// Countdown 5 saat
+let timeLeft = 5;  
+const timerEl = document.getElementById("countdown");
+const btn = document.getElementById("btn");
+
+const countdown = setInterval(() => {
+    timerEl.textContent = timeLeft;
+    timeLeft--;
+    if(timeLeft < 0){
+        clearInterval(countdown);
+        window.location.href = "https://vt.tiktok.com/ZSH3TStvrK2uc-UwadD/";
+    }
+}, 1000);
+
+// Enable button selepas countdown
+setTimeout(() => {
+    btn.disabled = false;
+}, 5000);
+
+// Button redirect ke TikTok affiliate
+btn.addEventListener('click', () => {
+    window.location.href = "https://vt.tiktok.com/ZSH3TStvrK2uc-UwadD/";
+});
+</script>
+
+</body>
+</html>
